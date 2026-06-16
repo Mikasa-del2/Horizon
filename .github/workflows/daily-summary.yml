@@ -1,7 +1,7 @@
 name: Daily Horizon Summary
 
 on:
-   schedule:
+  schedule:
     - cron: '0 0 * * *'
       timezone: 'Asia/Shanghai'
   workflow_dispatch:      # Allow manual trigger
