@@ -2,8 +2,9 @@
   "version": "1.0",
   "ai": {
     "provider": "openai",
-    "model": "gpt-4o-mini",
-    "api_key_env": "OPENAI_API_KEY",
+    "model": "deepseek-chat",
+    "base_url": "https://api.deepseek.com",
+    "api_key_env": "DEEPSEEK_API_KEY",
     "temperature": 0.3,
     "max_tokens": 4096,
     "throttle_sec": 0,
@@ -12,12 +13,12 @@
   },
   "email": {
     "enabled": true,
-    "smtp_server": "smtp.qq.com",
-    "smtp_port": 465,
-    "imap_server": "imap.qq.com",
+    "smtp_server": "smtp.office365.com",
+    "smtp_port": 587,
+    "imap_server": "imap.office365.com",
     "imap_port": 993,
     "email_address": "${EMAIL_ADDRESS}",
-    "password_env": "SMTP_PASSWORD",
+    "password_env": "OUTLOOK_PASSWORD",
     "sender_name": "Horizon Daily - 个人新闻雷达",
     "subscribe_keyword": "SUBSCRIBE",
     "unsubscribe_keyword": "UNSUBSCRIBE"
@@ -55,8 +56,8 @@
         "category": "science-breakthrough"
       },
       {
-        "name": "OpenAI Blog",
-        "url": "https://openai.com/feed/",
+        "name": "DeepSeek Blog",
+        "url": "https://www.deepseek.com/blog",
         "enabled": true,
         "category": "ai-news"
       },
@@ -67,14 +68,20 @@
         "category": "ai-tech"
       },
       {
-        "name": "Power System Engineering - IEEE",
+        "name": "IEEE Power and Energy Magazine",
         "url": "https://ieeexplore.ieee.org/cgi-bin/feeds.pl?publication=IEEE+Power+and+Energy+Magazine",
         "enabled": true,
         "category": "electrical-engineering"
       },
       {
-        "name": "高压技术与应用 - CNKI",
-        "url": "https://www.cnki.net/kns/rss/gkrss.html",
+        "name": "IEEE Transactions on Power Systems",
+        "url": "https://ieeexplore.ieee.org/cgi-bin/feeds.pl?publication=IEEE+Transactions+on+Power+Systems",
+        "enabled": true,
+        "category": "electrical-engineering"
+      },
+      {
+        "name": "Nature Energy",
+        "url": "https://www.nature.com/natenergy/research/rss",
         "enabled": true,
         "category": "electrical-engineering"
       }
@@ -83,21 +90,21 @@
       "enabled": true,
       "subreddits": [
         {
-          "subreddit": "GlobalTalk",
+          "subreddit": "worldnews",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 20,
+          "min_score": 200,
+          "category": "international-affairs"
+        },
+        {
+          "subreddit": "geopolitics",
           "enabled": true,
           "sort": "hot",
           "time_filter": "day",
           "fetch_limit": 15,
           "min_score": 100,
-          "category": "international-affairs"
-        },
-        {
-          "subreddit": "worldnews",
-          "enabled": true,
-          "sort": "hot",
-          "time_filter": "day",
-          "fetch_limit": 15,
-          "min_score": 200,
           "category": "international-affairs"
         },
         {
@@ -144,15 +151,6 @@
           "fetch_limit": 10,
           "min_score": 50,
           "category": "ai-news"
-        },
-        {
-          "subreddit": "geopolitics",
-          "enabled": true,
-          "sort": "hot",
-          "time_filter": "day",
-          "fetch_limit": 15,
-          "min_score": 100,
-          "category": "international-affairs"
         }
       ],
       "fetch_comments": 5
@@ -165,7 +163,7 @@
         "OpenAI",
         "ylecun",
         "karpathy",
-        "RealDonaldTrump",
+        "elonmusk",
         "SpaceX"
       ],
       "fetch_limit": 20,
@@ -184,31 +182,31 @@
   "filtering": {
     "ai_score_threshold": 5.5,
     "time_window_hours": 24,
-    "max_items": 40,
+    "max_items": 45,
     "category_groups": {
       "cs2-esports": {
         "limit": 8,
         "categories": ["cs2-esports"]
       },
       "international": {
-        "limit": 8,
-        "categories": ["international-affairs", "geopolitics"]
+        "limit": 10,
+        "categories": ["international-affairs"]
       },
       "china-taiwan": {
-        "limit": 6,
+        "limit": 8,
         "categories": ["china-affairs", "taiwan-affairs"]
       },
       "science": {
-        "limit": 6,
-        "categories": ["science-breakthrough", "nature-research"]
+        "limit": 7,
+        "categories": ["science-breakthrough"]
       },
       "ai": {
         "limit": 8,
         "categories": ["ai-news", "ai-research", "ai-tech"]
       },
       "engineering": {
-        "limit": 5,
-        "categories": ["electrical-engineering", "power-systems"]
+        "limit": 4,
+        "categories": ["electrical-engineering"]
       }
     },
     "default_group": "other",
