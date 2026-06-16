@@ -2,7 +2,7 @@
   "version": "1.0",
   "ai": {
     "provider": "openai",
-    "model": "gpt-4",
+    "model": "gpt-4o-mini",
     "api_key_env": "OPENAI_API_KEY",
     "temperature": 0.3,
     "max_tokens": 4096,
@@ -11,152 +11,215 @@
     "enrichment_concurrency": 1
   },
   "email": {
-    "enabled": false,
+    "enabled": true,
     "smtp_server": "smtp.qq.com",
     "smtp_port": 465,
     "imap_server": "imap.qq.com",
     "imap_port": 993,
-    "email_address": "xxx@qq.com",
-    "sender_name": "Horizon Daily",
+    "email_address": "${EMAIL_ADDRESS}",
+    "password_env": "SMTP_PASSWORD",
+    "sender_name": "Horizon Daily - 个人新闻雷达",
     "subscribe_keyword": "SUBSCRIBE",
     "unsubscribe_keyword": "UNSUBSCRIBE"
   },
   "sources": {
-    "github": [
-      {
-        "type": "user_events",
-        "username": "torvalds",
-        "enabled": true
-      },
-      {
-        "type": "repo_releases",
-        "owner": "astral-sh",
-        "repo": "uv",
-        "enabled": true
-      }
-    ],
-    "hackernews": {
-      "enabled": true,
-      "fetch_top_stories": 20,
-      "min_score": 100
-    },
     "rss": [
       {
-        "name": "Simon Willison",
-        "url": "https://simonwillison.net/atom/everything/",
+        "name": "HLTV.org - CS2 News",
+        "url": "https://www.hltv.org/rss/news",
         "enabled": true,
-        "category": "ai-tools"
+        "category": "cs2-esports"
       },
       {
-        "name": "LWN.net (subscriber full-text)",
-        "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
-        "enabled": false,
-        "category": "linux"
+        "name": "HLTV.org - Results",
+        "url": "https://www.hltv.org/rss/results",
+        "enabled": true,
+        "category": "cs2-esports"
+      },
+      {
+        "name": "Liquipedia CS2 News",
+        "url": "https://liquipedia.net/counterstrike/Portal:News/rss",
+        "enabled": true,
+        "category": "cs2-esports"
+      },
+      {
+        "name": "Nature - Latest Research",
+        "url": "https://www.nature.com/nature/research/rss",
+        "enabled": true,
+        "category": "science-breakthrough"
+      },
+      {
+        "name": "Science Magazine - News",
+        "url": "https://www.sciencemag.org/rss/current.xml",
+        "enabled": true,
+        "category": "science-breakthrough"
+      },
+      {
+        "name": "OpenAI Blog",
+        "url": "https://openai.com/feed/",
+        "enabled": true,
+        "category": "ai-news"
+      },
+      {
+        "name": "MIT Technology Review - AI",
+        "url": "https://www.technologyreview.com/feed/?tag=artificial-intelligence",
+        "enabled": true,
+        "category": "ai-tech"
+      },
+      {
+        "name": "Power System Engineering - IEEE",
+        "url": "https://ieeexplore.ieee.org/cgi-bin/feeds.pl?publication=IEEE+Power+and+Energy+Magazine",
+        "enabled": true,
+        "category": "electrical-engineering"
+      },
+      {
+        "name": "高压技术与应用 - CNKI",
+        "url": "https://www.cnki.net/kns/rss/gkrss.html",
+        "enabled": true,
+        "category": "electrical-engineering"
       }
     ],
     "reddit": {
       "enabled": true,
       "subreddits": [
         {
+          "subreddit": "GlobalTalk",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 100,
+          "category": "international-affairs"
+        },
+        {
+          "subreddit": "worldnews",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 200,
+          "category": "international-affairs"
+        },
+        {
+          "subreddit": "China",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 50,
+          "category": "china-affairs"
+        },
+        {
+          "subreddit": "taiwan",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 50,
+          "category": "taiwan-affairs"
+        },
+        {
+          "subreddit": "GlobalOffensive",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 20,
+          "min_score": 100,
+          "category": "cs2-esports"
+        },
+        {
           "subreddit": "MachineLearning",
           "enabled": true,
           "sort": "hot",
           "time_filter": "day",
           "fetch_limit": 15,
-          "min_score": 50
-        }
-      ],
-      "users": [
+          "min_score": 100,
+          "category": "ai-research"
+        },
         {
-          "username": "iamthatis",
+          "subreddit": "OpenAI",
           "enabled": true,
-          "sort": "new",
-          "fetch_limit": 10
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 50,
+          "category": "ai-news"
+        },
+        {
+          "subreddit": "geopolitics",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 100,
+          "category": "international-affairs"
         }
       ],
       "fetch_comments": 5
     },
     "twitter": {
-      "enabled": false,
-      "users": ["karpathy", "ylecun"],
-      "fetch_limit": 10,
+      "enabled": true,
+      "users": [
+        "HLTV",
+        "Liquipedia",
+        "OpenAI",
+        "ylecun",
+        "karpathy",
+        "RealDonaldTrump",
+        "SpaceX"
+      ],
+      "fetch_limit": 20,
       "fetch_reply_text": false,
       "max_replies_per_tweet": 3,
-      "max_tweets_to_expand": 10,
-      "reply_min_likes": 5
+      "max_tweets_to_expand": 15,
+      "reply_min_likes": 10
     },
-    "openbb": {
-      "enabled": false,
-      "fetch_filings": false,
-      "filings_provider": "sec",
-      "watchlists": [
-        {
-          "name": "megacaps",
-          "enabled": true,
-          "provider": "yfinance",
-          "fetch_limit": 20,
-          "category": "equities",
-          "symbols": ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN", "META", "TSLA"]
-        }
-      ]
-    },
-    "ossinsight": {
-      "enabled": false,
-      "period": "past_24_hours",
-      "languages": ["All", "Python", "TypeScript"],
-      "keywords": [],
-      "min_stars": 10,
-      "max_items": 30
+    "hackernews": {
+      "enabled": true,
+      "fetch_top_stories": 25,
+      "min_score": 200,
+      "category": "tech-news"
     }
   },
   "filtering": {
-    "ai_score_threshold": 6.0,
+    "ai_score_threshold": 5.5,
     "time_window_hours": 24,
-    "max_items": null,
-    "category_groups": {},
-    "default_group": "other",
-    "default_group_limit": null
-  },
-  "webhook": {
-    "enabled": false,
-    "url_env": "HORIZON_WEBHOOK_URL",
-    "delivery": "summary",
-    "overview_position": "first",
-    "platform": "generic",
-    "layout": "markdown",
-    "fallback_layout": "markdown",
-    "languages": null,
-    "request_body": {
-      "msg_type": "interactive",
-      "card": {
-        "schema": "2.0",
-        "config": {
-          "wide_screen_mode": true
-        },
-        "header": {
-          "title": {
-            "tag": "plain_text",
-            "content": "#{message_title}"
-          },
-          "template": "blue"
-        },
-        "body": {
-          "elements": [
-            {
-              "tag": "markdown",
-              "content": "Horizon生成结果: #{result}\nHorizon日报重要资讯数量: #{important_items}/#{all_items}"
-            },
-            {
-              "tag": "hr"
-            },
-            {
-              "tag": "markdown",
-              "content": "#{summary}"
-            }
-          ]
-        }
+    "max_items": 40,
+    "category_groups": {
+      "cs2-esports": {
+        "limit": 8,
+        "categories": ["cs2-esports"]
+      },
+      "international": {
+        "limit": 8,
+        "categories": ["international-affairs", "geopolitics"]
+      },
+      "china-taiwan": {
+        "limit": 6,
+        "categories": ["china-affairs", "taiwan-affairs"]
+      },
+      "science": {
+        "limit": 6,
+        "categories": ["science-breakthrough", "nature-research"]
+      },
+      "ai": {
+        "limit": 8,
+        "categories": ["ai-news", "ai-research", "ai-tech"]
+      },
+      "engineering": {
+        "limit": 5,
+        "categories": ["electrical-engineering", "power-systems"]
       }
     },
-    "headers": ""
+    "default_group": "other",
+    "default_group_limit": 3
+  },
+  "outputs": {
+    "email": {
+      "enabled": true
+    },
+    "github_pages": {
+      "enabled": true
+    }
   }
 }
