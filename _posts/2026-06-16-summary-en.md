@@ -5,192 +5,214 @@ date: 2026-06-16
 lang: en
 ---
 
-> From 42 items, 9 important content pieces were selected
+> From 63 items, 10 important content pieces were selected
 
 ---
 
-1. [Backdoor in LinkedIn Job Offer Exploits npm Prepare Script](#item-1) ⭐️ 9.0/10
-2. [Nanocrystal method boosts all-perovskite tandem solar module efficiency](#item-2) ⭐️ 9.0/10
+1. [SpaceX to Acquire Cursor for $60B](#item-1) ⭐️ 9.0/10
+2. [Nanocrystal method boosts all-perovskite tandem solar modules](#item-2) ⭐️ 9.0/10
 3. [At-home brain implant restores daily life for MND patient](#item-3) ⭐️ 9.0/10
-4. [Banned Book Library in a Wi-Fi Smart Light Bulb](#item-4) ⭐️ 8.0/10
-5. [Iroh 1.0: Peer-to-Peer Networking Library Released](#item-5) ⭐️ 8.0/10
-6. [AI Reveals Secret Lives of Animals](#item-6) ⭐️ 7.0/10
-7. [Kew Gardens digitizes 7 million specimens with AI aid](#item-7) ⭐️ 6.0/10
-8. [Obesity Drugs May Boost Testosterone and Sperm Quality](#item-8) ⭐️ 5.0/10
-9. [Simple Household Items Boost Research Reproducibility](#item-9) ⭐️ 5.0/10
+4. [Local LLMs: Progress but Pain Points Remain](#item-4) ⭐️ 8.0/10
+5. [Interactive Deep Dive into Mechanical Watch Mechanics](#item-5) ⭐️ 8.0/10
+6. [Tax AI profits, not human labor](#item-6) ⭐️ 8.0/10
+7. [El Niño in a Thermally Saturated World](#item-7) ⭐️ 7.0/10
+8. [Kew Gardens digitizes 7 million specimens for AI research](#item-8) ⭐️ 7.0/10
+9. [AI Reveals Secret Lives of Animals from Hummingbirds to Pumas](#item-9) ⭐️ 7.0/10
+10. [Haber-Bosch process should be taught with social-ecological lens](#item-10) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [Backdoor in LinkedIn Job Offer Exploits npm Prepare Script](https://roman.pt/posts/linkedin-backdoor/) ⭐️ 9.0/10
+## [SpaceX to Acquire Cursor for $60B](https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/) ⭐️ 9.0/10
 
-A security researcher reported that a recruiter from a fake crypto startup sent a GitHub repository containing a backdoor hidden in npm's prepare script, which executes automatically upon npm install. The attack targeted developers during a job interview process. This attack vector is particularly dangerous because it exploits the trust inherent in job interviews and leverages a common developer workflow (npm install) to compromise systems. It highlights a growing trend of supply chain attacks via fake job offers, as seen with North Korean threat groups like PurpleBravo. The backdoor was hidden in a public GitHub repository, buried within commented-out tests, and used npm's prepare script to execute arbitrary commands from a remote server. The researcher reported the repo to GitHub and the recruiter to LinkedIn, but the code remained active at the time of writing.
+SpaceX announced plans to acquire AI coding IDE Cursor (developer Anysphere) for $60 billion, following its recent IPO and a strategic pivot toward space-based AI data centers. This acquisition signals a paradigm shift where aerospace companies directly invest in AI developer tools, potentially reshaping the AI coding landscape and accelerating SpaceX's vision for orbital AI infrastructure. SpaceX had previously offered a $10 billion partnership option before committing to the full $60 billion acquisition. The deal values Cursor at roughly 20 times Minecraft's 2014 acquisition price, highlighting the premium on AI tools.
 
-hackernews · lwhsiao · Jun 15, 20:00 · [Discussion](https://news.ycombinator.com/item?id=48546294)
+hackernews · itsmarcelg · Jun 16, 10:44 · [Discussion](https://news.ycombinator.com/item?id=48553224)
 
-**Background**: npm lifecycle scripts like prepare, preinstall, and postinstall run automatically with full user privileges when packages are installed, making them a common vector for supply chain attacks. Setting ignore-scripts=true in .npmrc can block such attacks. GitHub plans to disable automatic script execution by default in npm v12 (expected July 2026) to mitigate this risk.
+**Background**: Cursor is an AI-powered code editor built on VS Code, offering intelligent code completions, integrated chat, and debugging assistance. SpaceX aims to deploy space-based AI data centers to overcome terrestrial power and cooling limitations, and sees Cursor as key to accelerating software development for that mission.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://cybersecuritynews.com/github-automated-disable-npm-script-installs/">GitHub to Automate Disable npm Script Installs to Block Supply Chain ...</a></li>
-<li><a href="https://stackoverflow.com/questions/44499912/why-is-npm-running-prepare-script-after-npm-install-and-how-can-i-stop-it">node.js - Why is npm running prepare script after npm install, and how ...</a></li>
-<li><a href="https://www.recordedfuture.com/research/purplebravos-targeting-it-software-supply-chain">PurpleBravo’s Targeting of the IT Software Supply Chain</a></li>
+<li><a href="https://www.reuters.com/legal/transactional/spacex-buy-anysphere-60-billion-2026-06-16/">SpaceX locks in $60 billion Cursor deal to close gap with rivals in AI coding race | Reuters</a></li>
+<li><a href="https://247wallst.com/investing/2026/06/16/spacex-launches-start-of-acquisition-spree-with-cursor-after-historic-ipo/">SpaceX Launches Start of Acquisition Spree with Cursor After Historic IPO - 24/7 Wall St.</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SpaceX">SpaceX - Wikipedia</a></li>
 
 </ul>
 </details>
 
-**Discussion**: Commenters expressed concern that this attack is uncomfortably close to a normal interview task, and some reported encountering similar scams multiple times. There was frustration that GitHub and LinkedIn did not take down the malicious content promptly, and a call for better cybercrime reporting infrastructure.
+**Discussion**: Community comments are mixed: some question the strategic fit, noting the $60B could build 150 hospitals, while others debate Cursor's value versus alternatives like Codex. A few highlight SpaceX's vision of a $26 trillion AI addressable market as justification.
 
-**Tags**: `#security`, `#supply chain attack`, `#npm`, `#job interview scam`, `#cybercrime`
+**Tags**: `#acquisition`, `#AI coding`, `#SpaceX`, `#Cursor`, `#tech industry`
 
 ---
 
 <a id="item-2"></a>
-## [Nanocrystal method boosts all-perovskite tandem solar module efficiency](https://www.nature.com/articles/s41586-026-10768-1) ⭐️ 9.0/10
+## [Nanocrystal method boosts all-perovskite tandem solar modules](https://www.nature.com/articles/s41586-026-10768-1) ⭐️ 9.0/10
 
-Researchers developed a solution-processed interconnecting layer using surface-engineered indium oxide nanocrystals to replace the conventional gold-based tunnel recombination junction in all-perovskite tandem solar modules. This achieved a certified power conversion efficiency of 26.2% on a 65 cm² module, with improved stability. This breakthrough addresses key barriers—parasitic absorption and interfacial instability—that have hindered commercialization of all-perovskite tandem solar modules. The high efficiency and scalable solution processing bring perovskite tandem technology closer to practical deployment in renewable energy. The nanocrystal layer features high optical transparency, smooth interfacial contact, and favorable energy level alignment, enabling a certified efficiency of 26.2% with an open-circuit voltage of 2.182 V, fill factor of 77.4%, and short-circuit current density of 15.6 mA cm⁻². The work was published in Nature on June 15, 2026.
+Researchers developed a solution-processed interconnecting layer using surface-engineered indium oxide nanocrystals to replace the conventional gold-based tunnel recombination junction in all-perovskite tandem solar modules, as published in Nature on June 15, 2026. This breakthrough addresses key limitations of gold-based tunnel recombination junctions, such as parasitic absorption and interfacial instability, potentially enabling higher efficiency and longer operational durability for all-perovskite tandem solar modules, which are a promising next-generation photovoltaic technology. The indium oxide nanocrystals feature high optical transparency, and controlled morphology and tailored ligand chemistry ensure smooth interfacial contact and favorable energy level alignment, eliminating the need for gold and enabling solution processing.
 
 rss · Nature - Latest Research · Jun 15, 00:00
 
-**Background**: All-perovskite tandem solar cells stack two perovskite subcells with different bandgaps to surpass the efficiency limit of single-junction cells. A key component is the tunnel recombination junction (TRJ) that connects the subcells; conventional gold-based TRJs cause parasitic absorption and stability issues. This work introduces a nanocrystal-based TRJ that overcomes these limitations.
+**Background**: All-perovskite tandem solar cells stack two perovskite layers with different bandgaps to exceed the efficiency limits of single-junction cells. A tunnel recombination junction connects the subcells, but conventional gold-based junctions cause parasitic absorption and instability. This work introduces a nanocrystal-based alternative that overcomes these issues.
 
 <details><summary>References</summary>
 <ul>
 <li><a href="https://www.nature.com/articles/s41586-026-10768-1">Nanocrystal-tailored recombination for all-perovskite tandem solar modules | Nature</a></li>
-<li><a href="https://www.nature.com/articles/s41563-024-02073-x">All-perovskite tandem solar cells achieving >29% efficiency with improved (100) orientation in wide-bandgap perovskites | Nature Materials</a></li>
-<li><a href="https://www.nature.com/articles/s41560-022-01059-w">Scalable two-terminal all-perovskite tandem solar modules with a 19.1% efficiency | Nature Energy</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/35549402/">Scalable processing for realizing 21.7%-efficient all - perovskite ...</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#perovskite solar cells`, `#nanocrystals`, `#photovoltaics`, `#tandem solar modules`, `#materials science`
+**Tags**: `#perovskite solar cells`, `#nanocrystals`, `#renewable energy`, `#materials science`, `#tandem solar modules`
 
 ---
 
 <a id="item-3"></a>
 ## [At-home brain implant restores daily life for MND patient](https://www.nature.com/articles/d41586-026-01863-4) ⭐️ 9.0/10
 
-A brain implant has enabled a man with motor neuron disease to communicate and control his computer at home for nearly two years, as reported in Nature on June 15, 2026. This marks a major milestone in assistive neurotechnology, demonstrating long-term, real-world use of a brain-computer interface that could significantly improve quality of life for people with paralysis. The device has been used continuously for nearly two years without reported complications, allowing the patient to perform daily tasks such as typing and web browsing.
+A brain-computer interface (BCI) implant has enabled a man with motor neuron disease to communicate and control his computer at home for nearly two years, as reported in Nature on June 15, 2026. This marks a breakthrough in long-term, at-home BCI use, significantly improving quality of life for patients with severe motor impairments and demonstrating the feasibility of practical neuroprosthetics. After about 40 weeks of training, the patient began using the device independently; it includes a text-to-speech system that uses a synthesized version of his pre-diagnosis voice.
 
 rss · Nature - Latest Research · Jun 15, 00:00
 
-**Background**: Motor neuron disease (MND) progressively damages nerve cells controlling voluntary muscles, often leading to complete paralysis. Brain-computer interfaces (BCIs) translate neural signals into commands for external devices, but most systems are limited to lab settings. This at-home implant represents a shift toward practical, long-term assistive technology.
+**Background**: Motor neuron disease (MND) progressively paralyzes muscles, often leaving patients unable to speak or move. Brain-computer interfaces (BCIs) decode neural signals to control external devices. Previous BCIs required surgery or were limited to lab settings. This implant, likely similar to Synchron's Stentrode, is delivered via blood vessels, avoiding open brain surgery.
 
-**Tags**: `#brain-computer interface`, `#neuroscience`, `#assistive technology`, `#motor neuron disease`, `#medical device`
+<details><summary>References</summary>
+<ul>
+<li><a href="https://www.nature.com/articles/d41586-026-01863-4">At-home brain implant gives man with motor neuron disease his daily life back</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Brain_implant">Brain implant - Wikipedia</a></li>
+
+</ul>
+</details>
+
+**Tags**: `#brain-computer interface`, `#neurotechnology`, `#motor neuron disease`, `#medical devices`, `#assistive technology`
 
 ---
 
 <a id="item-4"></a>
-## [Banned Book Library in a Wi-Fi Smart Light Bulb](https://www.richardosgood.com/posts/banned-book-library/) ⭐️ 8.0/10
+## [Local LLMs: Progress but Pain Points Remain](https://vickiboykis.com/2026/06/15/running-local-models-is-good-now/) ⭐️ 8.0/10
 
-A developer has turned a Wi-Fi smart light bulb into a web server that hosts a small library of banned books, accessible over the local network. This project combines technical ingenuity with free speech advocacy, demonstrating how everyday IoT devices can be repurposed to circumvent censorship and preserve access to information. The device has only 4MB of storage, limiting the library to a few EPUB files of around 350KB each. The server is accessible only on the local Wi-Fi network, not the internet.
+A widely discussed Hacker News article evaluates the current state of running large language models locally, highlighting that while local models have improved, they still face significant usability challenges such as speed, memory, and quantization trade-offs. This discussion reflects a key trend in AI deployment: the tension between cloud-based and local inference. As local models become more capable, they could reduce reliance on expensive API subscriptions, but current limitations mean many users still prefer cloud services for reliability and quality. Users report that dense models like Qwen 27B and Gemma 31B are smart but slow, while MoE models like Gemma 26B and Qwen 35B are faster but error-prone. Quantization to 4-bit often degrades tool-calling ability, and high memory requirements remain a barrier.
 
-hackernews · sohkamyung · Jun 15, 22:37 · [Discussion](https://news.ycombinator.com/item?id=48547985)
+hackernews · jfb · Jun 16, 14:36 · [Discussion](https://news.ycombinator.com/item?id=48555993)
 
-**Background**: Smart light bulbs are IoT devices that connect to Wi-Fi and are typically controlled via an app. This project hacks the bulb's firmware to run a lightweight web server instead. The concept is similar to PirateBox, a portable file-sharing device, but embedded in a light bulb.
+**Background**: Quantization is a technique that reduces model precision (e.g., from 32-bit floats to 8-bit integers) to lower memory usage and speed up inference, but it can degrade quality. Local LLMs run on consumer hardware, offering privacy and offline access, but require significant GPU memory and careful optimization.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://www.richardosgood.com/posts/banned-book-library/">Banned Book Library | Rick's Blog</a></li>
-<li><a href="https://en.wikipedia.org/wiki/The_Uncensored_Library">The Uncensored Library - Wikipedia</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Internet_censorship">Internet censorship - Wikipedia</a></li>
+<li><a href="https://medium.com/biased-algorithms/what-is-quantization-in-machine-learning-a-complete-guide-to-model-efficiency-ff69b70b149b">What is Quantization in Machine Learning ? A Complete... | Medium</a></li>
+<li><a href="https://www.cloudflare.com/learning/ai/what-is-quantization/">What is quantization in machine learning ?</a></li>
+<li><a href="https://inference.net/content/what-is-quantization-in-machine-learning/">What Is Quantization in Machine Learning & How It... | Inference.net</a></li>
 
 </ul>
 </details>
 
-**Discussion**: Commenters praised the project's creativity and relevance to free speech, with some drawing parallels to PirateBox and mesh networking. There was also discussion about the specific list of banned books and the broader context of censorship.
+**Discussion**: Commenters express mixed sentiments: some find local models still painful due to speed and quantization issues, while others strongly prefer them over cloud models like Claude Sonnet 4.6, citing better behavior and control. A key point is that as local models improve, the ceiling for cloud API pricing may lower.
 
-**Tags**: `#censorship`, `#IoT`, `#hacking`, `#free speech`, `#ebooks`
+**Tags**: `#local LLMs`, `#AI inference`, `#open-source models`, `#quantization`, `#Hacker News discussion`
 
 ---
 
 <a id="item-5"></a>
-## [Iroh 1.0: Peer-to-Peer Networking Library Released](https://www.iroh.computer/blog/v1) ⭐️ 8.0/10
+## [Interactive Deep Dive into Mechanical Watch Mechanics](https://ciechanow.ski/mechanical-watch/) ⭐️ 8.0/10
 
-Iroh 1.0 is a peer-to-peer networking library that enables direct connections between app instances without requiring user accounts, supporting custom transports beyond IPv4, IPv6, and relay. This library simplifies app-layer connectivity for developers, reducing reliance on centralized infrastructure and enabling decentralized applications with ease. Iroh uses cryptographic dial keys instead of IP addresses for addressing, and it supports custom transports via a plugin system to avoid codebase bloat.
+An interactive article by Bartosz Ciechanowski provides an in-depth, step-by-step technical exploration of mechanical watch mechanisms, using handcrafted vanilla code to create a highly educational web experience. This article stands out as a rare example of high-quality educational content that combines deep technical accuracy with accessible pedagogy, demonstrating the enduring value of the web as a platform for free knowledge sharing. The entire site is built with plain HTML, CSS, and JavaScript, ensuring compatibility with older devices like an iPhone 7, and the author has a Patreon for support.
 
-hackernews · chadfowler · Jun 15, 15:13 · [Discussion](https://news.ycombinator.com/item?id=48542480)
+hackernews · razin · Jun 16, 11:26 · [Discussion](https://news.ycombinator.com/item?id=48553550)
 
-**Background**: Traditional networking relies on IP addresses and DNS, which can be fragile for peer-to-peer apps. Iroh provides a dial-any-device approach similar to Tailscale but at the application layer, using cryptographic keys for identity and relays for NAT traversal.
+**Background**: Mechanical watches are intricate devices that measure time using a spring-driven mechanism without batteries. Understanding their inner workings—such as the mainspring, gear train, escapement, and balance wheel—requires careful study. This article uses interactive 3D visualizations to make these concepts accessible.
 
-<details><summary>References</summary>
-<ul>
-<li><a href="https://github.com/n0-computer/iroh">GitHub - n0-computer/ iroh : IP addresses break, dial keys instead.</a></li>
-<li><a href="https://docs.rs/iroh/latest/iroh/">iroh - Rust</a></li>
-<li><a href="https://iroh-computer.vercel.app/blog/iroh-0-29-net-is-the-new-iroh">iroh 0.29 - net is the new iroh - Iroh</a></li>
+**Discussion**: The community highly praises the article for its educational clarity and technical craftsmanship, with one teacher noting the rarity of such simple yet deep explanations. Another commenter was inspired to build a real-life exploded view of a watch movement.
 
-</ul>
-</details>
-
-**Discussion**: The community compared Iroh to Tailscale, with one developer noting it's like 'Tailscale at the application layer.' Another developer appreciated the custom transport extensibility, while some users found the documentation unclear about dial keys and the problem being solved.
-
-**Tags**: `#networking`, `#p2p`, `#rust`, `#open-source`, `#libraries`
+**Tags**: `#mechanical watch`, `#interactive visualization`, `#educational`, `#engineering`, `#web development`
 
 ---
 
 <a id="item-6"></a>
-## [AI Reveals Secret Lives of Animals](https://www.nature.com/articles/d41586-026-01887-w) ⭐️ 7.0/10
+## [Tax AI profits, not human labor](https://www.nature.com/articles/d41586-026-01877-y) ⭐️ 8.0/10
 
-A Nature article reports that advances in machine learning are enabling researchers to track and understand wildlife movements, landmarks, and social behaviors, from hummingbirds to pumas. This application of AI to ecology provides unprecedented insights into animal behavior, which can inform conservation efforts and deepen our understanding of biodiversity. The article highlights how machine learning models analyze large datasets from camera traps, GPS collars, and audio recordings to identify individual animals, map territories, and detect social interactions.
+A Nature article published on June 16, 2026, argues that as AI replaces human labor, welfare states relying on payroll taxes must fundamentally redesign their tax systems to tax technology profits instead. This proposal addresses a critical policy challenge: if AI displaces workers, payroll tax revenues will shrink, threatening social safety nets. Shifting taxes to AI profits could sustain welfare states while encouraging innovation. The article was published in Nature with doi:10.1038/d41586-026-01877-y. It highlights that welfare states built on salary-linked taxation need fundamental redesign as machines replace human labor.
 
-rss · Nature - Latest Research · Jun 15, 00:00
+rss · Nature - Latest Research · Jun 16, 00:00
 
-**Background**: Traditional wildlife research relies on manual observation and tagging, which is time-consuming and limited in scale. AI techniques like computer vision and acoustic analysis automate data processing, enabling continuous monitoring across vast areas.
+**Background**: Traditional welfare states fund social programs through payroll taxes on human labor. As AI and automation reduce the need for human workers, these tax bases erode. The article proposes taxing the profits generated by AI technologies instead, to maintain funding for public services.
 
-**Tags**: `#machine learning`, `#wildlife research`, `#AI applications`, `#ecology`
+**Tags**: `#AI`, `#economics`, `#taxation`, `#labor`, `#policy`
 
 ---
 
 <a id="item-7"></a>
-## [Kew Gardens digitizes 7 million specimens with AI aid](https://www.nature.com/articles/d41586-026-01917-7) ⭐️ 6.0/10
+## [El Niño in a Thermally Saturated World](https://www.nature.com/articles/d41586-026-01915-9) ⭐️ 7.0/10
 
-Kew Botanic Gardens in London has completed digitizing 7 million natural history specimens, and AI tools are now being applied to help analyze the data for biodiversity conservation. This massive digitization effort makes a vast collection accessible globally, and AI analysis can accelerate species identification and monitoring, aiding conservation efforts against biodiversity loss. The digitization includes specimens from the herbarium and fungarium, with over 3.4 million collections fully digitized as of July 2024. AI tools are being used to extract data from images and assist in species classification.
+A Nature article published on June 16, 2026, examines how El Niño behaves in a world where the climate has reached thermal saturation due to global warming. This analysis is significant because it addresses a critical gap in understanding how a key climate phenomenon like El Niño will evolve under extreme warming, which has broad implications for global weather patterns, agriculture, and disaster preparedness. The article is published in Nature and discusses the concept of thermal saturation, where the climate system's capacity to absorb additional heat is diminished, potentially altering El Niño's frequency, intensity, or impacts.
 
-rss · Nature - Latest Research · Jun 15, 00:00
+rss · Nature - Latest Research · Jun 16, 00:00
 
-**Background**: Kew's herbarium and fungarium are among the world's largest collections of plant and fungal diversity. Digitization involves high-resolution imaging and metadata capture, making specimens available online for researchers worldwide.
+**Background**: El Niño is a natural climate pattern characterized by warming of sea surface temperatures in the central and eastern Pacific Ocean, which affects global weather. Global warming is increasing baseline temperatures, and thermal saturation refers to a state where the climate system can no longer effectively absorb excess heat, leading to more extreme events.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://archive.org/stream/digitisingkewsh8moor/digitisingkewsh8moor_djvu.txt">Full text of " Digitising Kew 's Herbarium: Do We Have a Protocol for......</a></li>
-<li><a href="https://www.independent.co.uk/climate-change/news/kew-darwin-zombie-scientists-royal-botanic-gardens-b2751241.html">‘Zombie spiders’ and Darwin collection among fungi archived in Kew ...</a></li>
+<li><a href="https://en.wikipedia.org/wiki/El_Niño–Southern_Oscillation">El Niño–Southern Oscillation - Wikipedia</a></li>
+<li><a href="https://www.nytimes.com/2026/05/04/climate/el-nino-global-warming.html">A Strong El Niño May Be Coming. Global Warming Is Changing Its Effects. - The New York Times</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#AI`, `#digitization`, `#biodiversity`, `#natural history`
+**Tags**: `#climate science`, `#El Niño`, `#global warming`, `#Nature`
 
 ---
 
 <a id="item-8"></a>
-## [Obesity Drugs May Boost Testosterone and Sperm Quality](https://www.nature.com/articles/d41586-026-01867-0) ⭐️ 5.0/10
+## [Kew Gardens digitizes 7 million specimens for AI research](https://www.nature.com/articles/d41586-026-01917-7) ⭐️ 7.0/10
 
-A preliminary study published in Nature on June 15, 2026, suggests that GLP-1 obesity drugs may increase or stabilize testosterone levels and improve sperm quality in men. This finding could expand the therapeutic benefits of GLP-1 drugs beyond weight loss and diabetes management, potentially addressing male infertility and hormonal imbalances. The study is preliminary and has not yet been peer-reviewed; further research is needed to confirm the effects and understand the underlying mechanisms.
+The Royal Botanic Gardens at Kew announced on 16 June 2026 that it has completed the digitization of 7.4 million plant and fungal specimens using high-resolution cameras, involving 100 staff and 42 volunteers at a cost of £15 million. This massive digitized dataset enables AI tools to analyze biodiversity patterns and help combat biodiversity loss, potentially accelerating conservation research and policy decisions. The project used four high-resolution cameras and scanned specimens collected since the Darwin era. Kew aims to eventually digitize its entire collection of 8 million specimens.
 
 rss · Nature - Latest Research · Jun 15, 00:00
 
-**Background**: GLP-1 (glucagon-like peptide-1) receptor agonists, such as semaglutide (Ozempic, Wegovy) and tirzepatide (Zepbound), are drugs originally approved for type 2 diabetes and later found to promote weight loss. They work by mimicking incretin hormones that regulate appetite and insulin secretion. Recent research has been exploring additional health benefits of these drugs.
+**Background**: Kew's collection includes over 8 million plant and fungal specimens gathered over centuries. Digitization makes these specimens accessible online for researchers worldwide, and AI can now process the images to identify species, track changes, and predict extinction risks.
 
 <details><summary>References</summary>
 <ul>
-<li><a href="https://medicalxpress.com/news/2026-04-glp-drugs-weight-loss-health.html">What to know about GLP - 1 drugs for weight loss and health</a></li>
+<li><a href="https://www.nature.com/articles/d41586-026-01917-7">‘Every box has been opened’: London botanic gardens digitizes 7 million specimens</a></li>
+<li><a href="https://www.kew.org/about-us/press-media/digitisation-one-million">A treasure trove of knowledge: The Royal Botanic Gardens, Kew digitises 1 million specimens in groundbreaking project | Kew</a></li>
+<li><a href="https://phys.org/news/2023-07-treasure-trove-knowledge-royal-botanic.html">A treasure trove of knowledge: The Royal Botanic Gardens, Kew digitizes 1 million specimens in groundbreaking project</a></li>
 
 </ul>
 </details>
 
-**Tags**: `#obesity drugs`, `#GLP-1`, `#testosterone`, `#sperm quality`, `#health research`
+**Tags**: `#AI`, `#biodiversity`, `#digitization`, `#botany`, `#conservation`
 
 ---
 
 <a id="item-9"></a>
-## [Simple Household Items Boost Research Reproducibility](https://www.nature.com/articles/d41586-026-01885-y) ⭐️ 5.0/10
+## [AI Reveals Secret Lives of Animals from Hummingbirds to Pumas](https://www.nature.com/articles/d41586-026-01887-w) ⭐️ 7.0/10
 
-A Nature article published on June 15, 2026 argues that common household items can enhance research reproducibility and accessibility, countering the trend toward complex technology. This perspective challenges the assumption that advanced technology is always necessary, potentially lowering barriers for under-resourced labs and improving the reliability of scientific findings. The article does not specify particular household items but emphasizes their role in making research more reproducible and accessible, especially in field settings or low-resource environments.
+A Nature article published on June 15, 2026, reports that advances in machine learning are enabling researchers to trace the movements, landmarks, and social practices of wildlife in unprecedented detail. This breakthrough allows ecologists and conservationists to monitor animal behavior at scale, potentially transforming wildlife conservation and our understanding of animal societies. The article highlights how AI and machine learning are applied to track species ranging from hummingbirds to pumas, analyzing their movements and social interactions.
 
 rss · Nature - Latest Research · Jun 15, 00:00
 
-**Background**: Reproducibility is a cornerstone of scientific research, yet many studies fail to replicate due to complex or expensive equipment. Simple tools can reduce variability and make methods easier to adopt across labs.
+**Background**: Traditional wildlife tracking methods, such as GPS collars or manual observation, are often limited in scale and detail. Machine learning can process vast amounts of data from cameras, drones, and sensors to identify individual animals, map their territories, and detect behavioral patterns automatically.
 
-**Tags**: `#research`, `#reproducibility`, `#science`, `#tools`
+**Tags**: `#AI`, `#machine learning`, `#wildlife research`, `#ecology`, `#conservation`
+
+---
+
+<a id="item-10"></a>
+## [Haber-Bosch process should be taught with social-ecological lens](https://www.nature.com/articles/d41586-026-01914-w) ⭐️ 6.0/10
+
+A Nature commentary argues that the Haber-Bosch process, the main industrial method for ammonia production, should be taught through a social-ecological lens to highlight its environmental and societal impacts. This perspective could reshape science education by integrating sustainability and ethical considerations into chemistry curricula, encouraging students to think critically about the broader consequences of industrial processes. The Haber-Bosch process, developed in the early 20th century, converts atmospheric nitrogen and hydrogen into ammonia using high pressure and temperature with an iron catalyst. While it enabled synthetic fertilizers and boosted food production, it also has significant environmental costs, including high energy consumption and greenhouse gas emissions.
+
+rss · Nature - Latest Research · Jun 16, 00:00
+
+**Background**: The Haber-Bosch process is the primary industrial method for producing ammonia, which is essential for synthetic fertilizers. It was developed by Fritz Haber and Carl Bosch, who won Nobel Prizes for their work. The process uses high pressure (150-250 atm) and temperature (400-500°C) to combine nitrogen and hydrogen over an iron catalyst. A social-ecological lens examines how human societies and natural ecosystems interact, considering both social and environmental factors.
+
+<details><summary>References</summary>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Haber-Bosch_process">Haber-Bosch process</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Socio-ecological_system">Socio-ecological system - Wikipedia</a></li>
+
+</ul>
+</details>
+
+**Tags**: `#science education`, `#sustainability`, `#chemistry`, `#social-ecological`
 
 ---
