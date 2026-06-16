@@ -106,19 +106,37 @@ class RedditScraper(BaseScraper):
     ) -> List[ContentItem]:
         rss_url = f"{REDDIT_BASE}/r/{cfg.subreddit}/{cfg.sort}/.rss"
 
-        try:
-            response = await self.client.get(
-                rss_url,
-                headers={
-                    **REDDIT_HEADERS,
-                    "Accept": "application/atom+xml,application/xml,text/xml,*/*",
-                },
-                follow_redirects=True,
-            )
-            response.raise_for_status()
-        except httpx.HTTPError as e:
-            logger.warning("Reddit RSS fallback failed for r/%s: %s", cfg.subreddit, e)
-            return []
+        for attempt in range(3):
+            try:
+                response = await self.client.get(
+                    rss_url,
+                    headers={
+                        **REDDIT_HEADERS,
+                        "Accept": "application/atom+xml,application/xml,text/xml,*/*",
+                    },
+                    follow_redirects=True,
+                )
+                if response.status_code == 429:
+                    retry_after = int(response.headers.get("Retry-After", 15 * (attempt + 1)))
+                    logger.warning(
+                        "Reddit RSS rate limited (attempt %d/3), retrying after %ds",
+                        attempt + 1, retry_after,
+                    )
+                    await asyncio.sleep(min(retry_after, 30))
+                    continue
+                response.raise_for_status()
+                break
+            except httpx.HTTPError as e:
+                if attempt < 2:
+                    delay = 15 * (2 ** attempt)
+                    logger.warning(
+                        "Reddit RSS fallback failed (attempt %d/3) for r/%s: %s; retrying in %ds",
+                        attempt + 1, cfg.subreddit, e, delay,
+                    )
+                    await asyncio.sleep(delay)
+                    continue
+                logger.warning("Reddit RSS fallback failed for r/%s: %s", cfg.subreddit, e)
+                return []
 
         feed = feedparser.parse(response.text)
         items = []
@@ -325,35 +343,45 @@ class RedditScraper(BaseScraper):
         )
 
     async def _reddit_get(self, url: str, params: dict) -> Optional[Any]:
-        try:
-            response = await self.client.get(
-                url,
-                params=params,
-                headers=REDDIT_HEADERS,
-                follow_redirects=True,
-            )
-            if response.status_code == 429:
-                retry_after = int(response.headers.get("Retry-After", 5))
-                logger.warning("Reddit rate limited, retrying after %ds", retry_after)
-                await asyncio.sleep(retry_after)
+        max_retries = 3
+        base_delay = 15
+        for attempt in range(max_retries):
+            try:
                 response = await self.client.get(
                     url,
                     params=params,
                     headers=REDDIT_HEADERS,
                     follow_redirects=True,
                 )
-            if response.status_code == 403 and "/comments/" in url:
-                logger.info(
-                    "Reddit blocked comments request for %s; continuing without comments",
-                    url,
-                )
+                if response.status_code == 429:
+                    retry_after = int(response.headers.get("Retry-After", base_delay * (attempt + 1)))
+                    logger.warning(
+                        "Reddit rate limited (attempt %d/%d), retrying after %ds",
+                        attempt + 1, max_retries, retry_after,
+                    )
+                    await asyncio.sleep(min(retry_after, 60))
+                    continue
+                if response.status_code == 403 and "/comments/" in url:
+                    logger.info(
+                        "Reddit blocked comments request for %s; continuing without comments",
+                        url,
+                    )
+                    return None
+                if response.status_code == 403:
+                    raise RedditBlockedError(url)
+                response.raise_for_status()
+                return response.json()
+            except RedditBlockedError:
+                raise
+            except httpx.HTTPError as e:
+                if attempt < max_retries - 1:
+                    delay = base_delay * (2 ** attempt)
+                    logger.warning(
+                        "Reddit request failed (attempt %d/%d): %s; retrying in %ds",
+                        attempt + 1, max_retries, e, delay,
+                    )
+                    await asyncio.sleep(delay)
+                    continue
+                logger.warning("Reddit request failed after %d attempts: %s", max_retries, url)
                 return None
-            if response.status_code == 403:
-                raise RedditBlockedError(url)
-            response.raise_for_status()
-            return response.json()
-        except RedditBlockedError:
-            raise
-        except httpx.HTTPError as e:
-            logger.warning("Reddit request failed for %s: %s", url, e)
-            return None
+        return None
