@@ -34,54 +34,48 @@
       {
         "name": "HLTV.org - Results",
         "url": "https://www.hltv.org/rss/results",
-        "enabled": true,
+        "enabled": false,
         "category": "cs2-esports"
       },
       {
         "name": "Liquipedia CS2 News",
         "url": "https://liquipedia.net/counterstrike/Portal:News/rss",
-        "enabled": true,
+        "enabled": false,
         "category": "cs2-esports"
       },
       {
         "name": "Nature - Latest Research",
-        "url": "https://www.nature.com/nature/research/rss",
+        "url": "https://www.nature.com/nature.rss",
         "enabled": true,
         "category": "science-breakthrough"
       },
       {
         "name": "Science Magazine - News",
-        "url": "https://www.sciencemag.org/rss/current.xml",
+        "url": "https://www.science.org/rss/news_current.xml",
         "enabled": true,
         "category": "science-breakthrough"
       },
       {
         "name": "DeepSeek Blog",
         "url": "https://www.deepseek.com/blog",
-        "enabled": true,
+        "enabled": false,
         "category": "ai-news"
-      },
-      {
-        "name": "MIT Technology Review - AI",
-        "url": "https://www.technologyreview.com/feed/?tag=artificial-intelligence",
-        "enabled": true,
-        "category": "ai-tech"
       },
       {
         "name": "IEEE Power and Energy Magazine",
         "url": "https://ieeexplore.ieee.org/cgi-bin/feeds.pl?publication=IEEE+Power+and+Energy+Magazine",
-        "enabled": true,
+        "enabled": false,
         "category": "electrical-engineering"
       },
       {
         "name": "IEEE Transactions on Power Systems",
         "url": "https://ieeexplore.ieee.org/cgi-bin/feeds.pl?publication=IEEE+Transactions+on+Power+Systems",
-        "enabled": true,
+        "enabled": false,
         "category": "electrical-engineering"
       },
       {
         "name": "Nature Energy",
-        "url": "https://www.nature.com/natenergy/research/rss",
+        "url": "https://www.nature.com/natenergy.rss",
         "enabled": true,
         "category": "electrical-engineering"
       }
@@ -180,7 +174,7 @@
     }
   },
   "filtering": {
-    "ai_score_threshold": 5.5,
+    "ai_score_threshold": 3.5,
     "time_window_hours": 24,
     "max_items": 45,
     "category_groups": {
